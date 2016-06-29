@@ -10,4 +10,7 @@
 
 @interface WebViewController : UIViewController
 
+@property (nonatomic, copy) NSString *url;
+@property (nonatomic, copy) NSString *navBarTitle;
+
 @end

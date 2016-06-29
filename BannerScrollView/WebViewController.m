@@ -16,22 +16,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:webView];
+    
+    NSURL *url2 = [NSURL URLWithString:self.url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url2];
+    [webView loadRequest:request];
+    
+    UIButton *returnButton = [[UIButton alloc] initWithFrame:CGRectMake(20, self.view.frame.size.height - 50, 60, 30)];
+    returnButton.layer.cornerRadius = 15;
+    [returnButton setBackgroundColor:[UIColor purpleColor]];
+    [returnButton addTarget:self action:@selector(returnAction) forControlEvents:UIControlEventTouchUpInside];
+    [returnButton setTitle:@"return" forState:UIControlStateNormal];
+    [webView addSubview:returnButton];
 }
+
+- (void)returnAction {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
