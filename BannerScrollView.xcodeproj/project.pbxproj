@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E15C77B1F3BF8E700625E29 /* XSBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E15C7781F3BF8E700625E29 /* XSBanner.m */; };
-		3E15C77C1F3BF8E700625E29 /* XSBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E15C77A1F3BF8E700625E29 /* XSBannerCell.m */; };
+		3E15C7821F3C053200625E29 /* FLBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E15C77F1F3C053200625E29 /* FLBanner.m */; };
+		3E15C7831F3C053200625E29 /* FLBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E15C7811F3C053200625E29 /* FLBannerCell.m */; };
 		3E380B811D23A64900E41893 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E380B801D23A64900E41893 /* main.m */; };
 		3E380B841D23A64900E41893 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E380B831D23A64900E41893 /* AppDelegate.m */; };
 		3E380B871D23A64900E41893 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E380B861D23A64900E41893 /* ViewController.m */; };
@@ -33,7 +33,6 @@
 		3E380BEB1D23A7A100E41893 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E380BD91D23A7A100E41893 /* UIImageView+HighlightedWebCache.m */; };
 		3E380BEC1D23A7A100E41893 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E380BDB1D23A7A100E41893 /* UIImageView+WebCache.m */; };
 		3E380BED1D23A7A100E41893 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E380BDD1D23A7A100E41893 /* UIView+WebCacheOperation.m */; };
-		3E380BF31D23B19700E41893 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E380BF21D23B19700E41893 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,10 +53,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3E15C7771F3BF8E700625E29 /* XSBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBanner.h; sourceTree = "<group>"; };
-		3E15C7781F3BF8E700625E29 /* XSBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBanner.m; sourceTree = "<group>"; };
-		3E15C7791F3BF8E700625E29 /* XSBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBannerCell.h; sourceTree = "<group>"; };
-		3E15C77A1F3BF8E700625E29 /* XSBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBannerCell.m; sourceTree = "<group>"; };
+		3E15C77E1F3C053200625E29 /* FLBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLBanner.h; sourceTree = "<group>"; };
+		3E15C77F1F3C053200625E29 /* FLBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLBanner.m; sourceTree = "<group>"; };
+		3E15C7801F3C053200625E29 /* FLBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLBannerCell.h; sourceTree = "<group>"; };
+		3E15C7811F3C053200625E29 /* FLBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLBannerCell.m; sourceTree = "<group>"; };
 		3E380B7C1D23A64900E41893 /* BannerScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BannerScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E380B801D23A64900E41893 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E380B821D23A64900E41893 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,8 +104,6 @@
 		3E380BDB1D23A7A100E41893 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		3E380BDC1D23A7A100E41893 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		3E380BDD1D23A7A100E41893 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
-		3E380BF11D23B19700E41893 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
-		3E380BF21D23B19700E41893 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +131,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E15C77D1F3C053200625E29 /* FLBanner */ = {
+			isa = PBXGroup;
+			children = (
+				3E15C77E1F3C053200625E29 /* FLBanner.h */,
+				3E15C77F1F3C053200625E29 /* FLBanner.m */,
+				3E15C7801F3C053200625E29 /* FLBannerCell.h */,
+				3E15C7811F3C053200625E29 /* FLBannerCell.m */,
+			);
+			path = FLBanner;
+			sourceTree = "<group>";
+		};
 		3E380B731D23A64900E41893 = {
 			isa = PBXGroup;
 			children = (
@@ -158,13 +166,11 @@
 			isa = PBXGroup;
 			children = (
 				3E380BBD1D23A7A100E41893 /* SDWebImage */,
-				3E380BB61D23A69100E41893 /* XSCarouselBanner */,
+				3E15C77D1F3C053200625E29 /* FLBanner */,
 				3E380B821D23A64900E41893 /* AppDelegate.h */,
 				3E380B831D23A64900E41893 /* AppDelegate.m */,
 				3E380B851D23A64900E41893 /* ViewController.h */,
 				3E380B861D23A64900E41893 /* ViewController.m */,
-				3E380BF11D23B19700E41893 /* WebViewController.h */,
-				3E380BF21D23B19700E41893 /* WebViewController.m */,
 				3E380B881D23A64A00E41893 /* Main.storyboard */,
 				3E380B8B1D23A64A00E41893 /* Assets.xcassets */,
 				3E380B8D1D23A64A00E41893 /* LaunchScreen.storyboard */,
@@ -198,17 +204,6 @@
 				3E380BA61D23A64A00E41893 /* Info.plist */,
 			);
 			path = BannerScrollViewUITests;
-			sourceTree = "<group>";
-		};
-		3E380BB61D23A69100E41893 /* XSCarouselBanner */ = {
-			isa = PBXGroup;
-			children = (
-				3E15C7771F3BF8E700625E29 /* XSBanner.h */,
-				3E15C7781F3BF8E700625E29 /* XSBanner.m */,
-				3E15C7791F3BF8E700625E29 /* XSBannerCell.h */,
-				3E15C77A1F3BF8E700625E29 /* XSBannerCell.m */,
-			);
-			path = XSCarouselBanner;
 			sourceTree = "<group>";
 		};
 		3E380BBD1D23A7A100E41893 /* SDWebImage */ = {
@@ -389,10 +384,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E15C77B1F3BF8E700625E29 /* XSBanner.m in Sources */,
 				3E380BEB1D23A7A100E41893 /* UIImageView+HighlightedWebCache.m in Sources */,
-				3E380BF31D23B19700E41893 /* WebViewController.m in Sources */,
 				3E380BDF1D23A7A100E41893 /* README.md in Sources */,
+				3E15C7831F3C053200625E29 /* FLBannerCell.m in Sources */,
 				3E380BE71D23A7A100E41893 /* SDWebImagePrefetcher.m in Sources */,
 				3E380BE31D23A7A100E41893 /* SDWebImageDecoder.m in Sources */,
 				3E380BE41D23A7A100E41893 /* SDWebImageDownloader.m in Sources */,
@@ -403,12 +397,12 @@
 				3E380B871D23A64900E41893 /* ViewController.m in Sources */,
 				3E380BED1D23A7A100E41893 /* UIView+WebCacheOperation.m in Sources */,
 				3E380BE51D23A7A100E41893 /* SDWebImageDownloaderOperation.m in Sources */,
-				3E15C77C1F3BF8E700625E29 /* XSBannerCell.m in Sources */,
 				3E380BE91D23A7A100E41893 /* UIImage+GIF.m in Sources */,
 				3E380BE21D23A7A100E41893 /* SDWebImageCompat.m in Sources */,
 				3E380BE01D23A7A100E41893 /* NSData+ImageContentType.m in Sources */,
 				3E380B841D23A64900E41893 /* AppDelegate.m in Sources */,
 				3E380B811D23A64900E41893 /* main.m in Sources */,
+				3E15C7821F3C053200625E29 /* FLBanner.m in Sources */,
 				3E380BE11D23A7A100E41893 /* SDImageCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

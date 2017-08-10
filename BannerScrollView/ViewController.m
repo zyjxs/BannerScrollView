@@ -7,12 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "XSBanner.h"
-#import "WebViewController.h"
+#import "FLBanner.h"
 
 @interface ViewController ()
 
-@property (nonatomic, strong) XSBanner *bannerView;
+@property (nonatomic, strong) FLBanner *bannerView;
 @property (nonatomic, copy) NSDictionary *dict;
 
 @end
@@ -23,25 +22,20 @@
     [super viewDidLoad];
     
     //------------------------------------------初始化轮播视图----------------------------------------
-    self.bannerView = [[XSBanner alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width/2)];
+    self.bannerView = [[FLBanner alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width/2)];
     [self.view addSubview:self.bannerView];
     
     //相关设置
     /*
-     //设置是否分页（默认YES）
-     - (void)setPagingEnabled:(BOOL)pagingEnabled;
-     //设置是否显示pageController（默认NO）
+     //设置是否隐藏pageController（默认NO）
      - (void)setPageControlHidden:(BOOL)isHidden;
-     //设置是否显示重复滚动（默认YES）
+     //设置是否重复滚动（默认YES）
      - (void)setRepeatScroll:(BOOL)isRepeat;
      //启动定时滑动模式 (默认2秒)
      - (void)startTimerWithTimeInterval:(NSTimeInterval)timeInterval;
      //停止定时器
      - (void)stopTimer;
-     //设置图片模式
-     - (void)setImageMode:(UIViewContentMode)mode;
      */
-    
     
     
     //------------------------------------------请求网络图片----------------------------------------
@@ -73,6 +67,7 @@
 - (void)banner:(NSNotification *)not{
     //此处可根据项目需求，编写点击图片后需要执行的代码
     //如跳转网页，APP内部跳转等
+    NSLog(@"-当前点击图片对应的数据-：%@",self.dict[@"list"][not.object]);
 }
 
 - (void)didReceiveMemoryWarning {

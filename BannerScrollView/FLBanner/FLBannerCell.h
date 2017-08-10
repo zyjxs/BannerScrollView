@@ -1,5 +1,5 @@
 //
-//  XSScrollViewCell.h
+//  FLBannerCell.h
 //  轮播图
 //
 //  Created by qianfeng on 15/10/23.
@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XSBannerCell : UICollectionViewCell
+@interface FLBannerCell : UICollectionViewCell
 
 - (void)refreshUI:(NSString *)imageURL;
-- (void)setImageMode:(UIViewContentMode) mode;
 
 @end

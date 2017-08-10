@@ -1,18 +1,18 @@
 //
-//  XSBanner.m
+//  FLBanner.m
 //  轮播图
 //
 //  Created by qianfeng on 15/10/23.
 //  Copyright (c) 2015年 zyj. All rights reserved.
 //
 
-#import "XSBanner.h"
-#import "XSBannerCell.h"
+#import "FLBanner.h"
+#import "FLBannerCell.h"
 
 #define PAGECONTROL_HEIGHT 10
 #define PAGEINDICATOR_WIDTH 20
 
-@interface XSBanner () <UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface FLBanner () <UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) UICollectionViewFlowLayout *layout;
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -22,13 +22,11 @@
 @property (nonatomic, assign) BOOL isStartTimer;   //是否开始定时器
 @property (nonatomic, copy) NSMutableArray *dataArr;   //图片URL数组
 @property (nonatomic, strong) NSMutableDictionary *dict;   //图片数组中元素的字典，用于设置currentPage
-@property (nonatomic, assign) UIViewContentMode mode;
-@property (nonatomic, assign) BOOL isChangeMode;
 @property (nonatomic, assign) BOOL isRepeat;
 
 @end
 
-@implementation XSBanner
+@implementation FLBanner
 
 //懒加载
 - (UICollectionView *)collectionView {
@@ -55,7 +53,7 @@
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
         //注册cell
-        [_collectionView registerClass:[XSBannerCell class] forCellWithReuseIdentifier:@"cell"];
+        [_collectionView registerClass:[FLBannerCell class] forCellWithReuseIdentifier:@"cell"];
     }
     return _collectionView;
 }
@@ -202,16 +200,6 @@
 
 #pragma mark - 其他设置
 
-//设置是否分页
--(void)setPagingEnabled:(BOOL)pagingEnabled {
-    self.collectionView.pagingEnabled = pagingEnabled;
-}
-
-- (void)setImageMode:(UIViewContentMode) mode {
-    self.mode = mode;
-    self.isChangeMode = YES;
-}
-
 //设置是否显示pageController
 - (void)setPageControlHidden:(BOOL)isHidden {
     self.pageControl.hidden = isHidden;
@@ -305,10 +293,8 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    XSBannerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    FLBannerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     [cell refreshUI:self.dataArr[indexPath.item]];
-    if (self.isChangeMode)
-        [cell setImageMode:self.mode];
     return cell;
 }
 

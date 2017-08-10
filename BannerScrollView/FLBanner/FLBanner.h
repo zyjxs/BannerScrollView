@@ -1,5 +1,5 @@
 //
-//  XSBanner.h
+//  FLBanner.h
 //  轮播图
 //
 //  Created by qianfeng on 15/10/23.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XSBanner : UIView
+@interface FLBanner : UIView
 
 /**
  * 【使用须知】
@@ -32,18 +32,14 @@
 - (void)setBannerWithImageArr:(NSArray *)imageArr;
 
 
-//设置是否分页（默认YES）
-- (void)setPagingEnabled:(BOOL)pagingEnabled;
-//设置是否显示pageController（默认NO）
+//设置是否隐藏pageController（默认NO）
 - (void)setPageControlHidden:(BOOL)isHidden;
-//设置是否显示重复滚动（默认YES）
+//设置是否重复滚动（默认YES）
 - (void)setRepeatScroll:(BOOL)isRepeat;
 //启动定时滑动模式 (默认2秒)
 - (void)startTimerWithTimeInterval:(NSTimeInterval)timeInterval;
 //停止定时器
 - (void)stopTimer;
-//设置图片模式
-- (void)setImageMode:(UIViewContentMode)mode;
 
 
 @end
