@@ -1,5 +1,5 @@
 //
-//  XSCarouselBannerCell.h
+//  XSScrollViewCell.h
 //  轮播图
 //
 //  Created by qianfeng on 15/10/23.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XSCarouselBannerCell : UICollectionViewCell
+@interface XSBannerCell : UICollectionViewCell
 
 - (void)refreshUI:(NSString *)imageURL;
 - (void)setImageMode:(UIViewContentMode) mode;

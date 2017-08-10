@@ -7,12 +7,12 @@
 //
 
 #import "ViewController.h"
-#import "XSCarouselBanner.h"
+#import "XSBanner.h"
 #import "WebViewController.h"
 
 @interface ViewController ()
 
-@property (nonatomic, strong) XSCarouselBanner *bannerView;
+@property (nonatomic, strong) XSBanner *bannerView;
 @property (nonatomic, copy) NSDictionary *dict;
 
 @end
@@ -22,43 +22,57 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //初始化轮播视图
-    self.bannerView = [[XSCarouselBanner alloc] init];
-    //设置切换时间
-    [self.bannerView startTimerWithTimeInterval:4.0f];
+    //------------------------------------------初始化轮播视图----------------------------------------
+    self.bannerView = [[XSBanner alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width/2)];
     [self.view addSubview:self.bannerView];
     
-    //请求网络图片
+    //相关设置
+    /*
+     //设置是否分页（默认YES）
+     - (void)setPagingEnabled:(BOOL)pagingEnabled;
+     //设置是否显示pageController（默认NO）
+     - (void)setPageControlHidden:(BOOL)isHidden;
+     //设置是否显示重复滚动（默认YES）
+     - (void)setRepeatScroll:(BOOL)isRepeat;
+     //启动定时滑动模式 (默认2秒)
+     - (void)startTimerWithTimeInterval:(NSTimeInterval)timeInterval;
+     //停止定时器
+     - (void)stopTimer;
+     //设置图片模式
+     - (void)setImageMode:(UIViewContentMode)mode;
+     */
+    
+    
+    
+    //------------------------------------------请求网络图片----------------------------------------
     //控制台：negative or zero item sizes are not supported in the flow layout
     //为方便，此处使用同步请求数据，数据加载较慢
-    NSURL *url = [NSURL URLWithString:@"http://182.254.231.237/interface/banner.php?action=getBanner"];
+    NSURL *url = [NSURL URLWithString:@"http://api.hboffice.cn/v1/advert/with/position/1002/group/10001"];
     NSData *data = [NSData dataWithContentsOfURL:url];
     self.dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-    //设置图片数组
-    NSMutableArray *imageArr = [[NSMutableArray alloc] init];
-    for (NSDictionary *d in self.dict[@"data"]) {
-        [imageArr addObject:d[@"out_url"]];
-    }
     
+    
+    
+    //------------------------------------------设置图片数组----------------------------------------
+    //将接口中的轮播图片的字段单独获取出来
+    NSMutableArray *imageArr = [[NSMutableArray alloc] init];
+    for (NSDictionary *temp in self.dict[@"list"]) {
+        [imageArr addObject:temp[@"content"]];
+    }
     //设置轮播图图片
     [self.bannerView setBannerWithImageArr:imageArr];
-    //设置轮播图大小
-    [self.bannerView layoutWithWidth:self.view.frame.size.width andHeight:180];
     
     
     //监听banner图的点击通知
-    //用于使用点击图片跳转操作
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNot:) name:@"banner" object:nil];
-    
+    //【 *** 配合XSBanner里的UICollectionView代理方法：didSelectItemAtIndexPath 一起用 *** 】
+    //用于点击图片跳转操作
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(banner:) name:@"banner" object:nil];
 }
 
 
-- (void)receiveNot:(NSNotification *)not{
-    NSInteger index = [[NSString stringWithFormat:@"%@",not.object] integerValue];
-    NSDictionary *dict = self.dict[@"data"][index];
-    WebViewController *webVC = [[WebViewController alloc] init];
-    webVC.url = dict[@"link_url"];
-    [self presentViewController:webVC animated:YES completion:nil];
+- (void)banner:(NSNotification *)not{
+    //此处可根据项目需求，编写点击图片后需要执行的代码
+    //如跳转网页，APP内部跳转等
 }
 
 - (void)didReceiveMemoryWarning {
